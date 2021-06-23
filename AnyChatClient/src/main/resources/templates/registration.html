@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+</head>
+<body>
+<form method="post" th:action="@{/user/create}" th:object="${UserRegistration}">
+  <label>
+    <input type="text" th:field="*{firstname}" placeholder="firstname" >
+  </label>
+  <label>
+    <input type="text" th:field="*{lastname}" placeholder="lastname" >
+  </label>
+  <label>
+    <input type="text" th:field="*{email}" placeholder="email" >
+  </label>
+  <label>
+    <input type="text" th:field="*{country}" placeholder="country" >
+  </label>
+  <label>
+    <input type="text" th:field="*{city}" placeholder="city" >
+  </label>
+  <label>
+    <input type="text" th:field="*{phone}" placeholder="phone" >
+  </label>
+  <label>
+    <input type="password" th:field="*{password}" placeholder="password">
+  </label>
+
+  <input type="submit" value="Create user">
+</form>
+</body>
+</html>
+
+</body>
+</html>

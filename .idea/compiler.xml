@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="AnyChatResource" />
+        <module name="AnyChatClient" />
+        <module name="DiscoveryService" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="anychat" target="1.5" />
+      <module name="AnyChatClient" target="11" />
+      <module name="AnyChatResource" target="11" />
+      <module name="client" target="1.7" />
+      <module name="ConfigServer" target="11" />
+      <module name="DiscoveryService" target="11" />
+      <module name="gateway" target="11" />
+      <module name="resource" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AnyChatClient" options="-parameters" />
+      <module name="AnyChatResource" options="-parameters" />
+      <module name="ConfigServer" options="-parameters" />
+      <module name="DiscoveryService" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,37 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: api-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8010/eureka
+  cloud:
+    gateway:
+      routes:
+        - id: anychat-server-user-info
+          uri: lb://anychat-server
+          predicates:
+            - Path=/user
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: anychat-server-user-create-post
+          uri: lb://anychat-server
+          predicates:
+            - Path=/api/auth/create
+            - Method=POST
+        - id: anychat-server-msg-send
+          uri: lb://anychat-server
+          predicates:
+              - Path=/message/all
+              - Method=GET
+        - id: anychat-server-expire
+          uri: lb://anychat-server
+          predicates:
+            - Path=/user/expire
+            - Method=PUT
+
+
