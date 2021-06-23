@@ -43,7 +43,7 @@
         <module>AnyChatResource</module>
         <module>DiscoveryService</module>
         <module>gateway</module>
-        <module>ConfigServer</module>
+        <module>AnyChatResource</module>
 
     </modules>
 

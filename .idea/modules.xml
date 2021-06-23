@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AnyChatClient/AnyChatClient.iml" filepath="$PROJECT_DIR$/AnyChatClient/AnyChatClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AnyChatResource/AnyChatResource.iml" filepath="$PROJECT_DIR$/AnyChatResource/AnyChatResource.iml" />
       <module fileurl="file://$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" filepath="$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" />
       <module fileurl="file://$PROJECT_DIR$/anychat.iml" filepath="$PROJECT_DIR$/anychat.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
