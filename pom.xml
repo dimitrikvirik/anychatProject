@@ -42,7 +42,7 @@
         <module>AnyChatClient</module>
         <module>DiscoveryService</module>
         <module>gateway</module>
-
+        <module>AnyChat</module>
     </modules>
 
 

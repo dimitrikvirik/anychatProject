@@ -10,9 +10,11 @@
         <module name="AnyChatClient" />
         <module name="DiscoveryService" />
         <module name="gateway" />
+        <module name="AnyChat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AnyChat" target="11" />
       <module name="anychat" target="1.5" />
       <module name="AnyChatClient" target="11" />
       <module name="AnyChatResource" target="11" />
@@ -25,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AnyChat" options="-parameters" />
       <module name="AnyChatClient" options="-parameters" />
       <module name="AnyChatResource" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
