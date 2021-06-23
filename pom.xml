@@ -40,10 +40,8 @@
 
     <modules>
         <module>AnyChatClient</module>
-        <module>AnyChatResource</module>
         <module>DiscoveryService</module>
         <module>gateway</module>
-        <module>AnyChatResource</module>
 
     </modules>
 
