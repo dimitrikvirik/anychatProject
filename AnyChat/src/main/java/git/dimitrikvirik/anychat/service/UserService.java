@@ -2,14 +2,14 @@ package git.dimitrikvirik.anychat.service;
 
 import git.dimitrikvirik.anychat.model.param.UserRegistration;
 import lombok.AllArgsConstructor;
+
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.UsersResource;
-
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -18,10 +18,11 @@ import java.util.*;
 @AllArgsConstructor
 public class UserService {
 
-    private final   Keycloak keycloak;
+    private final Keycloak keycloak;
 
     public void create(UserRegistration userRegistration){
         UsersResource usersResource = keycloak.realm("appsdeveloperblog").users();
+
 
         UserRepresentation userRepresentation = new UserRepresentation();
         userRepresentation.setFirstName(userRegistration.getFirstname());
@@ -46,7 +47,9 @@ public class UserService {
         credentialRepresentation.setTemporary(false);
         userRepresentation.setCredentials(Collections.singletonList(credentialRepresentation));
 
-        usersResource.create(userRepresentation);
+         var response =     usersResource.create(userRepresentation);
+        Object entity = response.getEntity();
+
     }
 
 }

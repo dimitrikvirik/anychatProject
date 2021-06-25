@@ -1,13 +1,9 @@
+realm: appsdeveloperblog
 server:
   port: 8082
 spring:
   application:
     name: api-gateway
-eureka:
-  client:
-    service-url:
-      defaultZone:
-        http://localhost:8010/eureka
   cloud:
     gateway:
       routes:
@@ -26,12 +22,42 @@ eureka:
         - id: anychat-server-msg-send
           uri: lb://anychat-server
           predicates:
-              - Path=/message/all
-              - Method=GET
+            - Path=/message/all
+            - Method=GET
         - id: anychat-server-expire
           uri: lb://anychat-server
           predicates:
-            - Path=/user/expire
-            - Method=PUT
-
+              - Path=/user/expire
+              - Method=PUT
+      default-filters:
+        - TokenRelay
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:  http://localhost:8080/auth/realms/appsdeveloperblog
+      client:
+        registration:
+          mywebclient:
+            client-id: anychat-user
+            client-secret: 6b69691c-e35a-441c-9809-a64e9ece9dea
+            scope: openid, profile, roles
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8082/login/oauth2/code/mywebclient
+        provider:
+          mywebclient:
+            authorization-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/token
+            jwk-set-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/certs
+            user-info-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+            კაი სpublic-client: true
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8010/eureka
 

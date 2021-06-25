@@ -36,11 +36,10 @@ public class UserRestController {
     Keycloak keycloak;
 
     @GetMapping
-    @PreAuthorize("hasAuthority('SCOPE_expire-date-all')")
+    @PreAuthorize("hasRole('user')")
     public UserDTO getCurrentUser() throws Exception {
         JwtAuthenticationToken token = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-        throw  new Exception("Some Exception to be handled");
-    //   return objectMapper.convertValue(token.getToken().getClaims(), UserDTO.class);
+     return objectMapper.convertValue(token.getToken().getClaims(), UserDTO.class);
     }
     @PutMapping("/expire")
     @PreAuthorize("hasRole('admin')")
