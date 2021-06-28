@@ -1,0 +1,25 @@
+
+spring:
+    security:
+      user:
+        name: admin
+        password: admin
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://localhost:8080/auth/realms/anychat
+        client:
+          registration:
+            mywebclient:
+              client-id: superclient
+              client-secret: 135f6f8f-365d-44bf-b7ed-4f753ff9b2c8
+              scope: openid, profile, roles
+              authorization-grant-type: authorization_code
+              redirect-uri: http://localhost:8082/login/oauth2/code/mywebclient
+          provider:
+            mywebclient:
+              authorization-uri: http://localhost:8080/auth/realms/anychat/protocol/openid-connect/auth
+              token-uri: http://localhost:8080/auth/realms/anychat/protocol/openid-connect/token
+              jwk-set-uri: http://localhost:8080/auth/realms/anychat/protocol/openid-connect/certs
+              user-info-uri: http://localhost:8080/auth/realms/anychat/protocol/openid-connect/userinfo
+              user-name-attribute: preferred_username

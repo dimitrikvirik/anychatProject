@@ -9,5 +9,14 @@ spring:
       label: master
       password: root
       username: root
+
 server:
   port: 0
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8010/eureka

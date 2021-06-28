@@ -1,4 +1,4 @@
-realm: appsdeveloperblog
+realm: anychat
 server:
   port: 8082
 spring:
@@ -7,40 +7,26 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: anychat-server-user-info
-          uri: lb://anychat-server
+        - id: wd-admin
           predicates:
-            - Path=/user
-            - Method=GET
+            - Path=/admin/**
           filters:
-            - RemoveRequestHeader=Cookie
-        - id: anychat-server-user-create-post
+              - SwaggerHeaderFilter
+              - StripPrefix=1
           uri: lb://anychat-server
-          predicates:
-            - Path=/api/auth/create
-            - Method=POST
-        - id: anychat-server-msg-send
-          uri: lb://anychat-server
-          predicates:
-            - Path=/message/all
-            - Method=GET
-        - id: anychat-server-expire
-          uri: lb://anychat-server
-          predicates:
-              - Path=/user/expire
-              - Method=PUT
-      default-filters:
-        - TokenRelay
   security:
+    user:
+      name: admin
+      password: admin
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri:  http://localhost:8080/auth/realms/appsdeveloperblog
+          issuer-uri:  http://localhost:8080/auth/realms/anychat
       client:
         registration:
           mywebclient:
-            client-id: anychat-user
-            client-secret: 6b69691c-e35a-441c-9809-a64e9ece9dea
+            client-id: superclient
+            client-secret: 135f6f8f-365d-44bf-b7ed-4f753ff9b2c8
             scope: openid, profile, roles
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8082/login/oauth2/code/mywebclient
@@ -51,11 +37,12 @@ spring:
             jwk-set-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/certs
             user-info-uri: http://localhost:8080/auth/realms/${realm}/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
-            კაი სpublic-client: true
   main:
     web-application-type: reactive
     allow-bean-definition-overriding: true
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone:

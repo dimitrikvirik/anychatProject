@@ -4,6 +4,8 @@ package git.dimitrikvirik.anychat.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import git.dimitrikvirik.anychat.model.dto.UserDTO;
 import git.dimitrikvirik.anychat.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.*;
 import org.keycloak.representations.idm.*;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
+@Api("user")
 public class UserRestController {
 
 
@@ -36,6 +39,7 @@ public class UserRestController {
     Keycloak keycloak;
 
     @GetMapping
+    @ApiOperation(value = "User Info", notes = "Addition")
     @PreAuthorize("hasRole('user')")
     public UserDTO getCurrentUser() throws Exception {
         JwtAuthenticationToken token = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();

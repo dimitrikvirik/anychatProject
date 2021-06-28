@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Value("${user.role}")
-    private String role;
+
 
     @Autowired
     UserService userService;
@@ -25,7 +24,7 @@ public class AuthController {
     public String createuser(@RequestBody UserRegistration userRegistration) throws Exception {
 
      userService.create(userRegistration);
-        System.out.println(role);
+
         return  "success";
     }
 }
