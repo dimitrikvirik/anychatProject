@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AnyChat/AnyChat.iml" filepath="$PROJECT_DIR$/AnyChat/AnyChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AnyChatClient/AnyChatClient.iml" filepath="$PROJECT_DIR$/AnyChatClient/AnyChatClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" filepath="$PROJECT_DIR$/DiscoveryService/DiscoveryService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configServer/ConfigServer.iml" filepath="$PROJECT_DIR$/configServer/ConfigServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnyChatClient/anyChatClient.iml" filepath="$PROJECT_DIR$/AnyChatClient/anyChatClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anyChatResource/anyChatResource.iml" filepath="$PROJECT_DIR$/anyChatResource/anyChatResource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnyChat/anyChatResourceServer.iml" filepath="$PROJECT_DIR$/AnyChat/anyChatResourceServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/anychat.iml" filepath="$PROJECT_DIR$/anychat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DiscoveryService/discoveryService.iml" filepath="$PROJECT_DIR$/DiscoveryService/discoveryService.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
     </modules>
   </component>

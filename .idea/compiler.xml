@@ -7,31 +7,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AnyChatClient" />
-        <module name="DiscoveryService" />
+        <module name="discoveryService" />
+        <module name="anyChatClient" />
+        <module name="anyChatResourceServer" />
+        <module name="ConfigServer" />
+        <module name="anyChatResource" />
         <module name="gateway" />
-        <module name="AnyChat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AnyChat" target="11" />
       <module name="anychat" target="1.5" />
-      <module name="AnyChatClient" target="11" />
+      <module name="anyChatClient" target="11" />
       <module name="AnyChatResource" target="11" />
+      <module name="anyChatResource" target="11" />
+      <module name="anyChatResourceServer" target="11" />
       <module name="client" target="1.7" />
       <module name="ConfigServer" target="11" />
-      <module name="DiscoveryService" target="11" />
+      <module name="discoveryService" target="11" />
       <module name="gateway" target="11" />
       <module name="resource" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="AnyChat" options="-parameters" />
-      <module name="AnyChatClient" options="-parameters" />
       <module name="AnyChatResource" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
-      <module name="DiscoveryService" options="-parameters" />
+      <module name="anyChatClient" options="-parameters" />
+      <module name="anyChatResource" options="-parameters" />
+      <module name="anyChatResourceServer" options="-parameters" />
+      <module name="discoveryService" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>
   </component>

@@ -1,0 +1,57 @@
+server:
+  port: 8777
+
+spring:
+  profiles:
+    active: git
+  security:
+    user:
+      name: root
+      password: root
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:dimitrikvirik/SpringConfiguration.git
+          searchPaths: '{application}'
+          private-key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            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
+            -----END RSA PRIVATE KEY-----
+
